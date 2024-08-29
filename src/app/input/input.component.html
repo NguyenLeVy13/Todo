@@ -1,0 +1,22 @@
+
+<div class="p-0.5 bg-gradient-to-l from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg bg-hidden-on-focus">
+  <div class="flex items-center bg-white rounded-full overflow-hidden pl-6">
+    <button (click)="allChecked()" class="focus:outline-none">
+      <svg class="transition-colors text-gray-300 hover:text-black duration-300" width="20" height="20"
+        viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_66_2890)">
+          <path
+            d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4ZM24 28L16 20H32L24 28Z" />
+        </g>
+        <defs>
+          <clipPath id="clip0_66_2890">
+            <rect width="48" height="48" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+    <input (keydown.enter)="onEntered($event)" class=" ml-3 w-96 h-12 focus:outline-none" type="text"
+      placeholder="What needs to be done?">
+  </div>
+</div>
+

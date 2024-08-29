@@ -1,0 +1,27 @@
+@let nData = todoService.status;
+@for (item of list; track item.id; let i = $index) { 
+    <div *ngIf="nData=== 'all' || nData === '' || (nData === 'active' && !item.isChecker) || (nData === 'completed' && item.isChecker) " class="group flex items-center pl-6 w-full h-12 rounded-full ">
+        <div class="flex p-0.5 bg-gradient-to-l from-blue-500 via-purple-500 to-pink-500 rounded-sm ">
+            <input [checked]="item.isChecker" (click)="onChecked(item.id)" type="checkbox" id="checkbox" class="w-3 h-3 accent-black">
+        </div>
+        <label [ngClass]="{'line-through': item.isChecker}" for="checkbox" class="ml-3 text-black">{{item.label}}</label>
+        <button (click)="onDeleted(item.id)" class="hidden ml-auto pr-6 group-hover:block">
+            <div class="flex">
+                <svg class="transition-colors text-gray-300 hover:text-black duration-300" width="20" height="20" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_66_2878)">
+                    <path d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4ZM34 31.17L31.17 34L24 26.83L16.83 34L14 31.17L21.17 24L14 16.83L16.83 14L24 21.17L31.17 14L34 16.83L26.83 24L34 31.17Z"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_66_2878">
+                    <rect width="48" height="48" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>                        
+              </div>
+        </button>
+    </div>
+}
+
+<!-- <button (click)="onClick('all')">all</button>
+<button (click)="onClick('active')">active</button>
+<button (click)="onClick('compeleted')">compeleted</button> -->

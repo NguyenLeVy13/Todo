@@ -1,0 +1,19 @@
+<div *ngIf="todos.length > 0" class="flex justify-between border-t px-6 py-2">
+    <span class="text-xs font-medium p-2"> {{sumItems()}} items left</span>
+    <div class="flex text-xs">
+        <button (click)="onClicked('all')" class=" p-2 rounded-full border-2 border-transparent font-medium hover:border-2 hover:border-black">
+            All
+        </button>
+
+        <button (click)="onClicked('active')" class=" p-2 rounded-full border-2 border-transparent font-medium hover:border-2 hover:border-black">
+            Active
+        </button>
+
+        <button (click)="onClicked('completed')" class=" p-2 rounded-full border-2 border-transparent font-medium hover:border-2 hover:border-black">
+            Completed
+        </button>
+    </div>
+    <button (click)="onCleared()"
+        class="text-xs p-2 rounded-full border-2 border-transparent font-medium hover:border-2 hover:border-black">Clear
+        Completed</button>
+</div>
